@@ -38,7 +38,7 @@ CREATE TABLE users (
 CREATE TABLE bag (
   bagId serial PRIMARY KEY
   FOREIGN KEY (userId)
-    REFERENCES  USERS (USERId),
+    REFERENCES  USERS (userId),
   FOREIGN KEY (productId)
     REFERENCES  stock (productId),
   FOREIGN KEY (styleId)
