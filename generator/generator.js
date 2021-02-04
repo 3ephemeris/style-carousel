@@ -2,7 +2,7 @@ const faker = require('faker');
 const fs = require('file-system');
 
 const writeUsers = fs.createWriteStream('users.csv');
-writeUser.write('username, email\n', 'utf8');
+writeUsers.write('username, email\n', 'utf8');
 
 // const writeStock = fs.createWriteStream('stock.csv');
 //writeStock.write( , 'utf8');
@@ -54,7 +54,7 @@ const writeManyEntries = (stream, amount, encoding, cb) => {
   let i = amount;
   let id = 0;
   const write = () => {
-    let continue = true;
+    let ok = true;
     do {
       i -= 1;
       id += 1;
@@ -69,7 +69,7 @@ const writeManyEntries = (stream, amount, encoding, cb) => {
       } else {
         ok = stream.write(data, encoding);
       }
-    } while (i > 0 && continue);
+    } while (i > 0 && ok);
     if (i > 0) {
       stream.once('drain', write);
     }
