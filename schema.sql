@@ -19,7 +19,7 @@ CREATE TABLE quantity (
 CREATE TABLE styles (
   styleId serial PRIMARY KEY,
   styleName VARCHAR ( 40 ),
-  price IN
+  price INT
 )
 
 CREATE TABLE products (
