@@ -53,6 +53,7 @@ const generateStyles = (num) => {
 }
 
 const generateProduct = (num) => {
+
   let productId = Math.floor(Math.random() * (1000000 - 1) + 1)
   let styleId = num;
 
@@ -62,6 +63,7 @@ const generateProduct = (num) => {
 const generateBag = () => {
 
   let userId = Math.floor(Math.random() * (1000000 - 1) + 1);
+
   let itemId = Math.floor(Math.random() * (2000000 - 1) + 1);
 
   let sizes = ['xs', 's', 'm', 'l', 'xl', 'xxl'];
@@ -94,6 +96,7 @@ const writeManyEntries = (stream, amount, dataFunc, encoding, cb) => {
         ok = stream.write(data, encoding);
       }
     } while (i > 0 && ok);
+
     if (i > 0) {
       stream.once('drain', write);
     }
@@ -122,7 +125,7 @@ writeManyEntries(writeStyles, 2000000, generateStyles, 'utf-8', () => {
 });
 
 writeManyEntries(writeProducts, 2000000, generateProduct, 'utf-8', () => {
-  console.log('writing style completed!');
+  console.log('writing products completed!');
   writeProducts.end();
 });
 
@@ -130,5 +133,3 @@ writeManyEntries(writeBag, 2000000, generateBag, 'utf-8', () => {
   console.log('writing bag completed!');
    writeBag.end();
 });
-
-
