@@ -87,3 +87,14 @@ FROM '/Users/mariaward/Documents/style-carousel/bag.csv'
 DELIMITER ','
 CSV HEADER;
 
+--primary key indices
+CREATE INDEX ind_users_userid ON users(userid);
+CREATE INDEX ind_stock_productid ON stock(productid);
+CREATE INDEX ind_products_itemid ON products(productid);
+CREATE INDEX ind_quantity_quantityid ON quantity(quantityid);
+CREATE INDEX ind_bag_bagid ON bag(bagid);
+CREATE INDEX ind_styles_styleid ON styles(styleid);
+
+--the where items and on joins, foreign keys
+CREATE INDEX ind_styles_quantityid ON styles(quantityid);
+CREATE INDEX ind_products_product ON products(productid, styleid);
