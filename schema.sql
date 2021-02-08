@@ -86,3 +86,4 @@ COPY bag (userId,itemId,size,quantity,calculatedPrice)
 FROM '/Users/mariaward/Documents/style-carousel/bag.csv'
 DELIMITER ','
 CSV HEADER;
+

@@ -1,28 +1,40 @@
-const db = require('../database/items.js');
-
-const getItems = (req, res) => {
-  db.Items.find()
-    .then((data) => {
-      console.log(data);
-      res.status(200).send(data);
-    })
-    .catch((err) => {
-      console.log(err);
-      res.status(500).send(err);
-    });
-};
-
-const addToBag = (req, res) => {
-  const { styleName } = req.params;
-  db.Bag.save({ styleName })
-    .then((data) => {
-      res.status(200).send(data);
-    })
-    .catch((err) => {
-      res.status(500).send(err);
-    });
-};
+const model = require('./model.js')
 
 module.exports = {
-  getItems, addToBag,
-};
+  getItems: (req, res) => {
+    let productId = req.params.productId;
+    model.getProducts( productId, (err, results) => {
+      if (err) {
+        res.status(500).send();
+      } else {
+        res.status(200).send(results);
+      }
+    });
+  },
+
+  getUserBag: (req, res) => {
+    let userId = req.params.userId;
+    model.getUserBag(userId, (err, results) => {
+      if (err) {
+        res.status(500).send(err);
+      } else {
+        res.status(200).send(results);
+      }
+    });
+  },
+
+  addToBag: (req,res) => {
+    let userId = req.params.userId;
+    let data = req.body;
+    model.addToBag(userId, data, (err) => {
+      if (err) {
+        res.status(500).send(err);
+      } else {
+        res.status(201).send();
+      }
+    });
+  }
+
+}
+
+
