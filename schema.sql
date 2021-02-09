@@ -10,7 +10,7 @@ CREATE TABLE users (
 );
 
 COPY users (username, email)
-FROM '/Users/mariaward/Documents/style-carousel/users.csv'
+FROM '/Users/mariaward/Documents/style-carousel/generator/users.csv'
 DELIMITER ','
 CSV HEADER;
 
@@ -20,7 +20,7 @@ CREATE TABLE stock (
 );
 
 COPY stock (name)
-FROM '/Users/mariaward/Documents/style-carousel/stock.csv'
+FROM '/Users/mariaward/Documents/style-carousel/generator/stock.csv'
 DELIMITER ','
 CSV HEADER;
 
@@ -35,7 +35,7 @@ CREATE TABLE quantity (
 );
 
 COPY quantity (xs,s,m,l,xl,xxl)
-FROM '/Users/mariaward/Documents/style-carousel/quantity.csv'
+FROM '/Users/mariaward/Documents/style-carousel/generator/quantity.csv'
 DELIMITER ','
 CSV HEADER;
 
@@ -50,7 +50,7 @@ CREATE TABLE styles (
 );
 
 COPY styles (imageUrl,styleName,price,quantityId)
-FROM '/Users/mariaward/Documents/style-carousel/styles.csv'
+FROM '/Users/mariaward/Documents/style-carousel/generator/styles.csv'
 DELIMITER ','
 CSV HEADER;
 
@@ -65,7 +65,7 @@ CREATE TABLE products (
 );
 
 COPY products (productId,styleId)
-FROM '/Users/mariaward/Documents/style-carousel/products.csv'
+FROM '/Users/mariaward/Documents/style-carousel/generator/products.csv'
 DELIMITER ','
 CSV HEADER;
 
@@ -83,7 +83,7 @@ CREATE TABLE bag (
 );
 
 COPY bag (userId,itemId,size,quantity,calculatedPrice)
-FROM '/Users/mariaward/Documents/style-carousel/bag.csv'
+FROM '/Users/mariaward/Documents/style-carousel/generator/bag.csv'
 DELIMITER ','
 CSV HEADER;
 

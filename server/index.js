@@ -1,3 +1,4 @@
+require('newrelic');
 const express = require('express');
 const path = require('path');
 // const cors = require('cors');
@@ -17,6 +18,11 @@ app.get('/api/items/:productId', controllers.getItems);
 
 app.get('/api/bag/:userId', controllers.getUserBag);
 app.post('/api/bag/:userId', controllers.addToBag);
+
+app.post('/api/stock', controllers.addProduct);
+// app.put('/api/test', controllers.testUpdateQuantity);
+// app.delete('/api/stock', controllers.deleteProduct);
+// app.post('/items/style/:productid', controllers.addStyle);
 
 app.listen(PORT, () => {
   console.log(`Style Carousel running on port ${PORT}...`);
