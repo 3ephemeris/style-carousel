@@ -77,29 +77,6 @@ module.exports = {
     });
   },
 
-  // deleteProduct: (id, cb) => {
-  //   let qstring = ``;
-  //   client.query(qstring, (err) => {
-  //     if (err) {
-  //       cb(err);
-  //     } else {
-  //       cb();
-  //     }
-  //   })
-  // },
-
-  // addStyle: (productId, data, cb) => {
-  //   let quantObj = data.quantity;
-  //   let qstring = `INSERT INTO quantity (xs,s,m,l,xl,xxl) VALUES(${quantObj.xs}, ${quantObj.s}, ${quantObj.m}, ${quantObj.l}, ${quantObj.xl}, ${quantObj.xxl}) returning quantityid`;
-  //   let qstring2 = `INSERT INTO styles (imageurl, stylename, price) VALUES()`
-  //   client.query(qstring, (err, itemid) => {
-  //     if (err) {
-  //       cb(err);
-  //     } else {
-  //       cb(null, itemid.rows[0]);
-  //     }
-  //   })
-  // }
 
 }
 

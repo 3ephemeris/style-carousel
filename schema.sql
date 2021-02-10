@@ -88,6 +88,15 @@ DELIMITER ','
 CSV HEADER;
 
 --primary key indices
+DROP INDEX IF EXISTS ind_users_userid;
+DROP INDEX IF EXISTS ind_stock_productid;
+DROP INDEX IF EXISTS ind_products_itemid;
+DROP INDEX IF EXISTS ind_quantity_quantityid;
+DROP INDEX IF EXISTS ind_bag_bagid;
+DROP INDEX IF EXISTS ind_styles_styleid;
+DROP INDEX IF EXISTS ind_styles_quantityid;
+DROP INDEX IF EXISTS ind_products_product;
+
 CREATE INDEX ind_users_userid ON users(userid);
 CREATE INDEX ind_stock_productid ON stock(productid);
 CREATE INDEX ind_products_itemid ON products(productid);

@@ -7,11 +7,14 @@
 // });
 
 // module.exports = db;
-const { Client } = require('pg');
-const config = require('./dbConfig.js');
+const { Pool } = require('pg');
 
-const db = new Client({
+const db = new Pool({
   database: 'clothing'
+});
+
+db.on('error', (err, client) => {
+  console.error('Error:', err);
 });
 
 db.connect(err => {
